@@ -8,10 +8,12 @@ window.onload = function () {
   let title_a = document.getElementById("title_a");
   let title_c = document.getElementById("title_c");
   let title_b = document.getElementById("title_b");
+  let new_title = "";
 
   const title_a_default = title_a.innerHTML;
   const title_b_default = title_b.innerHTML;
   const title_c_default = title_c.innerHTML;
+  const history_array = [];
 
   let array_main = [
     "新人",
@@ -783,6 +785,18 @@ window.onload = function () {
 
     let random_c = randomParameter(array_main.length);
     title_c.innerHTML = array_main[random_c];
+
+    new_title = array_main[random_a] + array_sub[random_b] + array_main[random_c];
+    history_array.push(new_title);
+
+    // 案１.リストの描画を初期化する
+    // 案２．リストの最後の文字列のみを追加で描画するようにする
+    document.getElementById("history").innerHTML = "";
+    for (let i = 0; i < history_array.length; i++) {
+      let li = document.createElement("li");
+      li.textContent = history_array[i];
+      document.getElementById("history").appendChild(li);
+    }
   };
   // 母数から値をランダムに返す
   function randomParameter(array_length) {
@@ -795,3 +809,5 @@ window.onload = function () {
     title_c.innerHTML = title_c_default;
   };
 };
+
+//innerHtmlは良くないらしいぞ
