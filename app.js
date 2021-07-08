@@ -807,6 +807,7 @@ window.onload = function () {
     title_a.innerHTML = title_a_default;
     title_b.innerHTML = title_b_default;
     title_c.innerHTML = title_c_default;
+    document.getElementById("history").innerHTML = "まだないよ";
   };
 };
 
