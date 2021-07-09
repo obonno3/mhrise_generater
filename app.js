@@ -9,11 +9,11 @@ window.onload = function () {
   let title_c = document.getElementById("title_c");
   let title_b = document.getElementById("title_b");
   let new_title = "";
+  let history_array = [];
 
   const title_a_default = title_a.innerHTML;
   const title_b_default = title_b.innerHTML;
   const title_c_default = title_c.innerHTML;
-  const history_array = [];
 
   let array_main = [
     "新人",
@@ -787,10 +787,8 @@ window.onload = function () {
     title_c.innerHTML = array_main[random_c];
 
     new_title = array_main[random_a] + array_sub[random_b] + array_main[random_c];
-    history_array.push(new_title);
+    addLimited(history_array, new_title, 10);
 
-    // 案１.リストの描画を初期化する
-    // 案２．リストの最後の文字列のみを追加で描画するようにする
     document.getElementById("history").innerHTML = "";
     for (let i = 0; i < history_array.length; i++) {
       let li = document.createElement("li");
@@ -802,13 +800,17 @@ window.onload = function () {
   function randomParameter(array_length) {
     return Math.floor(Math.random() * array_length);
   }
+  //配列に個数制限つける
+  function addLimited(array, value, limit) {
+    array.unshift(value);
+    array.splice(limit);
+  }
   // リセットボタン
   reset_btn.onclick = function () {
     title_a.innerHTML = title_a_default;
     title_b.innerHTML = title_b_default;
     title_c.innerHTML = title_c_default;
+    history_array = [];
     document.getElementById("history").innerHTML = "まだないよ";
   };
 };
-
-//innerHtmlは良くないらしいぞ
