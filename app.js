@@ -15,7 +15,7 @@ window.onload = function () {
   const title_b_default = title_b.innerHTML;
   const title_c_default = title_c.innerHTML;
 
-  let array_main = [
+  const array_main = [
     "新人",
     "一年生",
     "初心者",
@@ -649,7 +649,7 @@ window.onload = function () {
     "合戦",
   ];
 
-  let array_sub = [
+  const array_sub = [
     "の",
     "が",
     "で",
