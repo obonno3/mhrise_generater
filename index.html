@@ -7,33 +7,35 @@
     <!-- bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous" />
     <link rel="stylesheet" href="scss/style.css" />
-    <title>モンスターハンターライズ　ランダム称号ジェネレーター</title>
+    <title>モンスターハンターライズ ランダム称号ジェネレーター</title>
   </head>
   <body>
     <header>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">モンスターハンターライズ　ランダム称号ジェネレーター</a>
+          <a class="navbar-brand" href="#">モンスターハンターライズ ランダム称号ジェネレーター</a>
         </div>
       </nav>
     </header>
-    <h1>ランダム称号ジェネレーター</h1>
-    <div>
-      <span id="title_a">新人</span>
-      <span id="title_b">の</span>
-      <span id="title_c">ハンター</span>
+    <div class="container">
+      <h1 class="text-center">MHRise ランダム称号ジェネレーター</h1>
+      <div class="display-1 mx-auto">
+        <span id="title_a">新人</span>
+        <span id="title_b">の</span>
+        <span id="title_c">ハンター</span>
+      </div>
+      <div>
+        <input type="button" value="生成する" id="btn_generate" />
+        <input type="button" value="リセット" id="btn_reset" />
+      </div>
+      <h2>使い方</h2>
+      <p>生成ボタンで、称号をランダムに組み合わせます。</p>
+      <p>チェックボックスのチェックを外すと外した場所は(なし)になります</p>
+      <h2>履歴(新しいの10個まで)</h2>
+      <ul id="history">
+        <li></li>
+      </ul>
     </div>
-    <div>
-      <input type="button" value="生成する" id="btn_generate" />
-      <input type="button" value="リセット" id="btn_reset" />
-    </div>
-    <h2>使い方</h2>
-    <p>生成ボタンで、称号をランダムに組み合わせます。</p>
-    <!-- <p>チェックボックスのチェックを外すと外した場所は(なし)になります</p> -->
-    <h2>履歴(新しいの10個まで)</h2>
-    <ul id="history">
-      <li></li>
-    </ul>
     <!-- script -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
     <script src="app.js"></script>
